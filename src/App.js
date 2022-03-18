@@ -6,7 +6,7 @@ import PostDetails from "./containers/PostDetails";
 
 function App() {
   return (
-    <div className="bg-white border border-slate-800 rounded-md h-[90vh] mt-[35px] max-w-[300px] sm:max-w-[500px] md:max-w-[600px] mx-auto flex flex-col">
+    <div className="bg-white border border-slate-800 rounded-md max-h-[90vh] mt-[35px] max-w-[300px] sm:max-w-[500px] md:max-w-[600px] mx-auto overflow-auto flex flex-col">
       <Header />
       <Routes>
         <Route path="/" exact element={<AllPosts />} />
