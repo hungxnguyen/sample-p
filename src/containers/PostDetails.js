@@ -31,7 +31,7 @@ function Detail() {
 
       <div className="flex justify-center">
         <Link to={`/post/${postId}/author/` + post.userId}>
-          <button className="bg-slate-500 p-2 rounded-md text-white w-48 hover:bg-slate-600">
+          <button className="bg-slate-500 p-2.5 rounded-md text-white mx-48 hover:bg-slate-600">
             More Posts by Author: {post.userId}
           </button>
         </Link>
