@@ -1,21 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import Post from "../components/Post";
 import { Link, useParams } from "react-router-dom";
 import { getPosts, getComments } from "../utils/fetchData";
 import Comment from "../components/Comment";
 import SubHeading from "../components/SubHeading";
+import { postsContext } from '../App';
 
 function Detail() {
-  const [post, setPost] = useState(null);
-  const [comments, setComments] = useState([]);
   const { id: postId } = useParams();
+  const { posts }  = useContext(postsContext);
+  const [comments, setComments] = useState([])
+  const post = posts?.[postId]
 
   useEffect(() => {
     if (postId) {
-      getPosts().then((post) => {
-        const filteredPost = post.find((post) => post.id === Number(postId));
-        setPost(filteredPost);
-      });
       getComments(postId).then((commentsData) => {
         setComments(commentsData);
       });
